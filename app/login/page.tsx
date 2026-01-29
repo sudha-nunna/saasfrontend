@@ -1,9 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect,Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { useAuth } from "../../context/AuthContext"
+import LoginClient from "./LoginClient";
 
 export default function Login() {
   const router = useRouter()
@@ -131,6 +132,9 @@ export default function Login() {
           </p>
         </div>
       </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <LoginClient />
+      </Suspense>
     </div>
   )
 }
