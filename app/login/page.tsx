@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import LoginForm from "./LoginForm.tsx"
+import LoginForm from "./LoginForm"
 
 function LoginFallback() {
   return (
