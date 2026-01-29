@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm install",
+  "startCommand": "next start",
+  "env": "nodejs",
+  "envVars": [
+    {
+      "key": "NEXT_PUBLIC_API_URL",
+      "value": ""
+    }
+  ]
+}
