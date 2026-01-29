@@ -1,7 +1,7 @@
 "use client"
 
 import { Suspense } from "react"
-import LoginForm from "./LoginForm"
+import LoginForm from "./LoginForm.tsx"
 
 function LoginFallback() {
   return (
