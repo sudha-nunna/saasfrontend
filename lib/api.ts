@@ -27,9 +27,13 @@ export async function apiCall(
   const url = `${API_BASE_URL}${endpoint}`;
   
   const defaultHeaders: Record<string, string> = {
-    "Content-Type": "application/json",
-    ...(typeof options.headers === 'object' && options.headers !== null ? options.headers : {}),
-  };
+  "Content-Type": "application/json",
+};
+
+if (options?.headers && !Array.isArray(options.headers)) {
+  Object.assign(defaultHeaders, options.headers as Record<string, string>);
+}
+
 
   // Add authorization token if available
   const token = typeof window !== 'undefined' 
