@@ -63,7 +63,7 @@ export default function Products() {
         const BASE = process.env.NEXT_PUBLIC_API_BASE ?? 'https://saas-backend-1-p5kr.onrender.com/api'
         // save base on component scope if needed by other helpers
         ;(window as any).__API_BASE = BASE
-        const res = await fetch(`${BASE}/api/products`)
+        const res = await fetch(`${BASE}/products`)
         if (!res.ok) {
           const text = await res.text().catch(() => '')
           throw new Error(`Failed to fetch products from server: ${res.status} ${res.statusText} ${text}`)
@@ -331,7 +331,7 @@ export default function Products() {
 
     try {
       // Send to backend for persistence
-      const response = await fetch(`${apiBase()}/api/products/bulk`, {
+      const response = await fetch(`${apiBase()}/products/bulk`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ rows })
@@ -354,7 +354,7 @@ export default function Products() {
       }
 
       // Refresh products list from server and normalize IDs
-      const productsResponse = await fetch(`${apiBase()}/api/products`)
+      const productsResponse = await fetch(`${apiBase()}/products`)
       if (!productsResponse.ok) throw new Error('Failed to fetch updated products')
       const updatedRaw = await productsResponse.json()
       const updatedProducts = (updatedRaw || []).map((p: any, i: number) => ({
@@ -408,7 +408,7 @@ export default function Products() {
        status: 'active'
      }
 
-     const response = await fetch(`${apiBase()}/api/products/bulk`, {
+     const response = await fetch(`${apiBase()}/products/bulk`, {
        method: 'POST',
        headers: { 'Content-Type': 'application/json' },
        body: JSON.stringify({ rows: [productData] })
@@ -420,7 +420,7 @@ export default function Products() {
      }
 
      // Refresh products list
-     const res = await fetch(`${apiBase()}/api/products`)
+     const res = await fetch(`${apiBase()}/products`)
      if (!res.ok) throw new Error("Failed to fetch updated products")
 
      const data = await res.json()
