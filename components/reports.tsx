@@ -25,7 +25,7 @@ interface TurnoverMetric {
 export async function fetchInventoryAlerts() {
   const BASE = process.env.NEXT_PUBLIC_API_BASE ?? 'https://saas-backend-1-p5kr.onrender.com/api'
   try {
-    const response = await fetch(`${BASE}/api/products/low-stock`)
+    const response = await fetch(`${BASE}/low-stock`)
     if (!response.ok) {
       const text = await response.text().catch(() => '')
       throw new Error(`Failed to fetch alerts: ${response.status} ${response.statusText} ${text}`)
@@ -45,10 +45,10 @@ export async function fetchInventoryAlerts() {
 }
 
 export async function fetchInventoryTurnover() {
-  const BASE = process.env.NEXT_PUBLIC_API_BASE ?? 'http://localhost:5000'
+  const BASE = process.env.NEXT_PUBLIC_API_BASE ?? 'https://saas-backend-1-p5kr.onrender.com/api'
   try {
     // Get all products
-    const productsResponse = await fetch(`${BASE}/api/products?limit=100`)
+    const productsResponse = await fetch(`${BASE}/products`)
     if (!productsResponse.ok) {
       throw new Error('Failed to fetch products')
     }
@@ -56,7 +56,7 @@ export async function fetchInventoryTurnover() {
     const products = productsData.products || []
 
     // Get sales data for the last month
-    const salesResponse = await fetch(`${BASE}/api/reports/top-products?period=month&limit=100`)
+    const salesResponse = await fetch(`${BASE}/sales/top-products?period=month&limit=100`)
     if (!salesResponse.ok) {
       throw new Error('Failed to fetch sales data')
     }
