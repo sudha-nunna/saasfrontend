@@ -8,7 +8,7 @@ import TopProductsChart from "@/components/top-products-chart"
 import { motion } from "framer-motion"
 
 // Resolve API base consistently with auth
-const API = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
+const API = (process.env.NEXT_PUBLIC_API_URL || "https://saas-backend-1-p5kr.onrender.com/api").replace(/\/$/, "");
 
 interface Product {
   _id: string

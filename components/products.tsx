@@ -60,7 +60,7 @@ export default function Products() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const BASE = process.env.NEXT_PUBLIC_API_BASE ?? 'http://localhost:5000/api'
+        const BASE = process.env.NEXT_PUBLIC_API_BASE ?? 'https://saas-backend-1-p5kr.onrender.com/api'
         // save base on component scope if needed by other helpers
         ;(window as any).__API_BASE = BASE
         const res = await fetch(`${BASE}/api/products`)

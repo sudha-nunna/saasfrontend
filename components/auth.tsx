@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "../context/AuthContext"; // Import the useAuth hook
 
 // Resolve API base without relying on a missing utils file
-const API = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
+const API = (process.env.NEXT_PUBLIC_API_URL || "https://saas-backend-1-p5kr.onrender.com/api").replace(/\/$/, "");
 
 interface SignInFormData {
   email: string;

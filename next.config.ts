@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
 
   env: {
     NEXT_PUBLIC_API_URL:
-      process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api",
+      process.env.NEXT_PUBLIC_API_URL || "https://saas-backend-1-p5kr.onrender.com/api",
   },
 
   async headers() {
@@ -35,7 +35,7 @@ const nextConfig: NextConfig = {
         {
           source: "/api/:path*",
           destination: `${
-            process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"
+            process.env.NEXT_PUBLIC_API_URL || "https://saas-backend-1-p5kr.onrender.com/api"
           }/:path*`,
         },
       ],

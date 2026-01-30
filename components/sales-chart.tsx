@@ -13,7 +13,7 @@ import {
 } from "recharts";
 
 // Resolve API base consistently
-const API = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api").replace(/\/$/, "");
+const API = (process.env.NEXT_PUBLIC_API_URL || "https://saas-backend-1-p5kr.onrender.com/api").replace(/\/$/, "");
 
 interface AnalyticsData {
   date: string;

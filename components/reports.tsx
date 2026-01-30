@@ -23,7 +23,7 @@ interface TurnoverMetric {
 }
 
 export async function fetchInventoryAlerts() {
-  const BASE = process.env.NEXT_PUBLIC_API_BASE ?? 'http://localhost:5000/api'
+  const BASE = process.env.NEXT_PUBLIC_API_BASE ?? 'https://saas-backend-1-p5kr.onrender.com/api'
   try {
     const response = await fetch(`${BASE}/api/products/low-stock`)
     if (!response.ok) {

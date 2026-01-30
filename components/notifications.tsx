@@ -26,7 +26,7 @@ export default function Notifications({ onClose }: NotificationsProps) {
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/products");
+        const response = await fetch("https://saas-backend-1-p5kr.onrender.com/api/products");
         if (!response.ok) throw new Error("Failed to fetch products");
         const products = await response.json();
 

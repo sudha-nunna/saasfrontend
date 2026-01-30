@@ -10,8 +10,8 @@
 
 export const API_BASE_URL = 
   typeof window !== 'undefined' 
-    ? process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"
-    : process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+    ? process.env.NEXT_PUBLIC_API_URL || "https://saas-backend-1-p5kr.onrender.com/api"
+    : process.env.NEXT_PUBLIC_API_URL || "https://saas-backend-1-p5kr.onrender.com/api";
 
 /**
  * Make API requests with proper error handling

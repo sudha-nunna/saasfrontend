@@ -20,7 +20,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
   useEffect(() => {
     const fetchNotificationCount = async () => {
       try {
-        const API = (process.env.NEXT_PUBLIC_API_URL as string) || 'http://localhost:5000/api'
+        const API = (process.env.NEXT_PUBLIC_API_URL as string) || 'https://saas-backend-1-p5kr.onrender.com/api'
         const response = await fetch(`${API}/products`);
         if (!response.ok) return;
         const products = await response.json();

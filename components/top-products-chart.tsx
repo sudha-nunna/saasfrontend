@@ -19,7 +19,7 @@
 //     setLoading(true)
 //     setError(null)
 //     try {
-//       const res = await fetch(`http://localhost:5000/api/analytics/top-products?sortBy=${sortBy}&limit=10`)
+//       const res = await fetch(`https://saas-backend-1-p5kr.onrender.com/api/analytics/top-products?sortBy=${sortBy}&limit=10`)
 //       if (!res.ok) throw new Error(`Server returned ${res.status}`)
 //       const json = await res.json()
 //       if (!json.success) throw new Error(json.error)
@@ -318,7 +318,7 @@ export default function TopProductsChart() {
     setError(null)
     try {
       const res = await fetch(
-        `http://localhost:5000/api/analytics/top-products?sortBy=${sortBy}&limit=10`
+        `https://saas-backend-1-p5kr.onrender.com/api/analytics/top-products?sortBy=${sortBy}&limit=10`
       )
       if (!res.ok) throw new Error(`Server returned ${res.status}`)
       const json = await res.json()
